@@ -1,0 +1,162 @@
+E-Commerce Sales Prediction Model starting...
+
+🚀 TRAINING NEW MODEL...
+2025-08-20 21:49:17,660 - INFO - Pipeline starting...
+2025-08-20 21:49:17,660 - INFO - Step 1/10: Data loading...
+2025-08-20 21:49:17,660 - INFO - Loading dataset: ecommerce_sales.csv
+2025-08-20 21:49:17,685 - INFO - Dataset loaded successfully. Shape: (18260, 11)
+2025-08-20 21:49:17,685 - INFO - Step 2/10: Data validation...
+2025-08-20 21:49:17,689 - INFO - Data validation completed
+
+==================================================
+DATA VALIDATION REPORT
+==================================================
+Data shape: (18260, 11)
+Column count: 11
+
+No missing values ✓
+
+Business logic checks:
+  revenue_inconsistency: 0 ✓
+  negative_price: 0 ✓
+  negative_sales: 0 ✓
+  negative_cost: 0 ✓
+==================================================
+
+2025-08-20 21:49:17,691 - INFO - Step 3/10: Data visualization...
+2025-08-20 21:49:17,948 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-08-20 21:49:17,995 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-08-20 21:49:38,571 - INFO - Step 4/10: Data cleaning...
+2025-08-20 21:49:38,574 - INFO - Starting data cleaning...
+2025-08-20 21:49:38,614 - INFO - Detected 56 outliers in sales column
+2025-08-20 21:49:38,623 - INFO - Detected 0 outliers in price column
+2025-08-20 21:49:38,634 - INFO - Detected 0 outliers in cost column
+2025-08-20 21:49:38,642 - INFO - Data cleaning completed
+2025-08-20 21:49:38,643 - INFO - Step 5/10: Feature engineering...
+2025-08-20 21:49:38,644 - INFO - Creating time-based features...
+2025-08-20 21:49:38,673 - INFO - Time-based features completed
+2025-08-20 21:49:38,673 - INFO - Creating lag features...
+2025-08-20 21:49:38,696 - INFO - Products with sufficient data: 10/10
+2025-08-20 21:49:38,739 - INFO - sales_lag_1 feature has 10 NaN values
+2025-08-20 21:49:38,740 - INFO - Lag features completed
+2025-08-20 21:49:38,740 - INFO - Creating business logic features...
+2025-08-20 21:49:38,802 - INFO - Business logic features completed
+2025-08-20 21:49:38,802 - INFO - Encoding categorical variables...
+2025-08-20 21:49:38,817 - INFO - Categorical variables encoded
+2025-08-20 21:49:38,817 - INFO - Feature engineering completed. Final data shape: (18260, 46)
+2025-08-20 21:49:38,818 - INFO - Step 6/10: Model data preparation...
+2025-08-20 21:49:38,825 - INFO - NaN cleaning: 300 rows removed
+2025-08-20 21:49:38,837 - INFO - Prepared 42 features for modeling
+2025-08-20 21:49:38,838 - INFO - Available rows count: 17960
+2025-08-20 21:49:38,878 - INFO - Data split: Train=14368, Test=3592
+2025-08-20 21:49:38,878 - INFO - Index mismatch resolved: 17960 records used
+2025-08-20 21:49:38,880 - INFO - Step 7/10: Model training...
+2025-08-20 21:49:38,881 - INFO - Training models...
+2025-08-20 21:49:38,881 - INFO - Training linear_regression...
+2025-08-20 21:49:38,986 - INFO - linear_regression - CV RMSE: 3.9007 (+/- 0.0826)
+2025-08-20 21:49:38,986 - INFO - Training random_forest...
+2025-08-20 21:51:27,673 - INFO - random_forest - CV RMSE: 3.9528 (+/- 0.0645)
+2025-08-20 21:51:27,674 - INFO - Training xgboost...
+2025-08-20 21:51:29,132 - INFO - xgboost - CV RMSE: 4.2215 (+/- 0.2128)
+2025-08-20 21:51:29,132 - INFO - Training lightgbm...
+2025-08-20 21:51:32,032 - INFO - lightgbm - CV RMSE: 3.9866 (+/- 0.1092)
+2025-08-20 21:51:32,033 - INFO - Best model: linear_regression
+2025-08-20 21:51:32,034 - INFO - Saving best model (linear_regression) to models/best_model.pkl
+2025-08-20 21:51:32,040 - INFO - Saving all models to models/all_models.pkl
+2025-08-20 21:51:32,179 - INFO - Saving feature names to models/feature_names.pkl
+2025-08-20 21:51:32,182 - INFO - All models and metadata saved successfully!
+2025-08-20 21:51:32,185 - INFO - Step 8/10: Model evaluation...
+2025-08-20 21:51:32,185 - INFO - Testing models...
+2025-08-20 21:51:32,193 - INFO - linear_regression - Test RMSE: 3.7878, MAE: 3.0131, R²: 0.5248
+2025-08-20 21:51:32,309 - INFO - random_forest - Test RMSE: 3.8189, MAE: 3.0402, R²: 0.5169
+2025-08-20 21:51:32,325 - INFO - xgboost - Test RMSE: 4.0061, MAE: 3.1867, R²: 0.4684
+2025-08-20 21:51:32,340 - INFO - lightgbm - Test RMSE: 3.8162, MAE: 3.0376, R²: 0.5176
+2025-08-20 21:51:32,341 - INFO - Step 9/10: Saving pipeline state...
+2025-08-20 21:51:32,343 - INFO - Pipeline state saved successfully!
+2025-08-20 21:51:32,343 - INFO - Step 10/10: Results visualization...
+2025-08-20 21:51:43,373 - INFO - Selected model does not support feature importance
+2025-08-20 21:51:43,373 - INFO - Pipeline completed successfully!
+2025-08-20 21:51:43,382 - INFO - Report generated
+E-COMMERCE SALES PREDICTION MODEL REPORT
+==================================================
+
+DATASET INFORMATION:
+- Total records: 18,260
+- Number of features: 42
+- Date range: 2020-04-11 - 2025-04-10
+- Number of products: 10
+
+MODEL PERFORMANCES:
+- linear_regression:
+  * RMSE: 3.7878
+  * MAE: 3.0131
+  * R²: 0.5248
+- random_forest:
+  * RMSE: 3.8189
+  * MAE: 3.0402
+  * R²: 0.5169
+- xgboost:
+  * RMSE: 4.0061
+  * MAE: 3.1867
+  * R²: 0.4684
+- lightgbm:
+  * RMSE: 3.8162
+  * MAE: 3.0376
+  * R²: 0.5176
+
+BEST MODEL: linear_regression
+- RMSE: 3.7878
+- MAE: 3.0131
+- R²: 0.5248
+
+RECOMMENDATIONS:
+- Add more external features (weather, holidays)
+- Implement hyperparameter tuning to improve model performance
+- Try ensemble methods
+- Perform seasonal decomposition analysis
+
+2025-08-20 21:51:43,386 - INFO - Predicting sales for next 30 days...
+2025-08-20 21:51:43,594 - INFO - Future sales predictions completed: 300 predictions
+2025-08-20 21:51:43,604 - INFO - Future predictions saved to 'future_sales_predictions.csv'
+2025-08-20 21:51:43,605 - INFO - Detailed report saved to 'model_analysis_report.txt'
+
+🎯 MODEL FILES SAVED:
+├── Best Model: models/best_model.pkl
+├── All Models: models/all_models.pkl
+├── Feature Names: models/feature_names.pkl
+├── Pipeline Config: models/pipeline_config.pkl
+└── Model Metadata: models/model_metadata.pkl
+2025-08-20 21:51:52,097 - INFO - Prediction visualization saved to 'future_predictions_visualization.png'
+
+📊 RUNNING ADDITIONAL ANALYSES...
+
+Error analysis:
+2025-08-20 21:51:52,123 - INFO - NaN cleaning: 300 rows removed
+2025-08-20 21:51:52,157 - INFO - Prepared 42 features for modeling
+2025-08-20 21:51:52,158 - INFO - Available rows count: 17960
+2025-08-20 21:51:52,245 - INFO - Data split: Train=14368, Test=3592
+2025-08-20 21:51:52,246 - INFO - Index mismatch resolved: 17960 records used
+High error (100+) predictions: 0
+Average error: 3.01
+Maximum error: 15.54
+
+Correlation analysis:
+Highest correlation with target variable:
+sales                 1.000000
+category_avg_sales    0.727527
+category_std_sales    0.725557
+revenue               0.515076
+product_avg_sales     0.018380
+effective_price       0.014984
+cost                  0.014984
+sales_lag_1           0.013799
+price_normalized      0.013636
+price                 0.013636
+Name: sales, dtype: float64
+
+🔄 EXAMPLE: LOADING EXISTING MODEL...
+To use existing model: load_and_predict('new_data.csv', 'models/best_model.pkl')
+
+✅ PIPELINE COMPLETED!
+📁 Check the 'models/' directory for saved model files
+📈 Check output files: future_sales_predictions.csv, model_analysis_report.txt
