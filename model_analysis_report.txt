@@ -1,0 +1,37 @@
+E-COMMERCE SALES PREDICTION MODEL REPORT
+==================================================
+
+DATASET INFORMATION:
+- Total records: 18,260
+- Number of features: 42
+- Date range: 2020-04-11 - 2025-04-10
+- Number of products: 10
+
+MODEL PERFORMANCES:
+- linear_regression:
+  * RMSE: 3.7878
+  * MAE: 3.0131
+  * R²: 0.5248
+- random_forest:
+  * RMSE: 3.8189
+  * MAE: 3.0402
+  * R²: 0.5169
+- xgboost:
+  * RMSE: 4.0061
+  * MAE: 3.1867
+  * R²: 0.4684
+- lightgbm:
+  * RMSE: 3.8162
+  * MAE: 3.0376
+  * R²: 0.5176
+
+BEST MODEL: linear_regression
+- RMSE: 3.7878
+- MAE: 3.0131
+- R²: 0.5248
+
+RECOMMENDATIONS:
+- Add more external features (weather, holidays)
+- Implement hyperparameter tuning to improve model performance
+- Try ensemble methods
+- Perform seasonal decomposition analysis
