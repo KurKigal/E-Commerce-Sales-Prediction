@@ -93,8 +93,8 @@ joblib >= 1.0.0
 ### Quick Start
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/ecommerce-sales-prediction.git
-cd ecommerce-sales-prediction
+git clone https://github.com/KurKigal/E-Commerce-Sales-Prediction.git
+cd E-Commerce-Sales-Prediction
 
 # Install dependencies
 pip install pandas numpy scikit-learn xgboost lightgbm matplotlib seaborn joblib
@@ -331,13 +331,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact & Links
 
-**Author**: [Your Name]
-- 📧 Email: your.email@example.com
-- 🐦 Twitter: [@yourhandle](https://twitter.com/yourhandle)
-- 💼 LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
-- 🌐 Portfolio: [yourwebsite.com](https://yourwebsite.com)
+**Author**: [Emirhan Keser]
+- 📧 Email: keseremirhann@gmail.com
+- 💼 LinkedIn: [Emirhan Keser](https://linkedin.com/in/emirhan-keser)
 
-**Project Repository**: [https://github.com/yourusername/ecommerce-sales-prediction](https://github.com/yourusername/ecommerce-sales-prediction)
+**Project Repository**: [https://github.com/KurKigal/E-Commerce-Sales-Prediction/](https://github.com/KurKigal/E-Commerce-Sales-Prediction/)
 
 ## 🙏 Acknowledgments
 
